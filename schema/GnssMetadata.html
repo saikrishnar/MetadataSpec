@@ -942,7 +942,10 @@ setState('schema_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
+               </span> &lt; <strong>Attitude</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -959,6 +962,10 @@ setState('schema_scbox', false);
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
             <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>An attitude specifies an orientation in 3-D space with respect to a local vertical.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -986,7 +993,12 @@ setState('type_Attitude_xibox', true);
          </div>
          <div id="type_Attitude_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Attitude</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>/&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+               <span class="scTag">name</span>="<span class="scContent">Attitude</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
+                        </span>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>/&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1003,7 +1015,10 @@ setState('type_Attitude_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Band</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1023,7 +1038,7 @@ setState('type_Attitude_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>Formerly known as band.</td>
+            <td>A Band is a finite span of RF spectrum. Each Band is received from a single Source and converted to a sample stream by a signal processor that is typically referred to as an RF front-end. </td>
          </tr>
       </table>
       <div class="sample box">
@@ -1034,26 +1049,42 @@ setState('type_Attitude_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Band_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;centerfreq&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;centerfreq&gt; <span class="type">
                      <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
                   </span> &lt;/centerfreq&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;translatedfreq&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;translatedfreq&gt; <span class="type">
                      <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
                   </span> &lt;/translatedfreq&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;inverted&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;inverted&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span> &lt;/inverted&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;delaybias&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;delaybias&gt; <span class="type">
                      <a title="Jump to &#34;Duration&#34; type definition." href="#type_Duration">Duration</a>
                   </span> &lt;/delaybias&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;bandwidth&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;bandwidth&gt; <span class="type">
                      <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
                   </span> &lt;/bandwidth&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1070,35 +1101,41 @@ setState('type_Band_xibox', true);
          </div>
          <div id="type_Band_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Band</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">centerfreq</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Band</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">translatedfreq</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">inverted</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">delaybias</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Duration&#34; type definition." href="#type_Duration">Duration</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">bandwidth</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">centerfreq</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">translatedfreq</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">inverted</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:boolean</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">delaybias</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Duration&#34; type definition." href="#type_Duration">Duration</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">bandwidth</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1201,7 +1238,10 @@ setState('type_BandSource_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Block</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1232,22 +1272,38 @@ setState('type_BandSource_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Block_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;chunk&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;chunk&gt; <span class="type">
                      <a title="Jump to &#34;Chunk&#34; type definition." href="#type_Chunk">Chunk</a>
                   </span> &lt;/chunk&gt; <span class="occurs">[1..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;cycles&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;cycles&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/cycles&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Number of cycles to repeat the chunk pattern.'); viewDocumentation('Element', 'cycles', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;sizeHeader&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;sizeHeader&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/sizeHeader&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;sizeFooter&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;sizeFooter&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/sizeFooter&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1264,27 +1320,33 @@ setState('type_Block_xibox', true);
          </div>
          <div id="type_Block_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Block</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">chunk</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Block</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;Chunk&#34; type definition." href="#type_Chunk">Chunk</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">cycles</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">sizeHeader</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">sizeFooter</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">chunk</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Chunk&#34; type definition." href="#type_Chunk">Chunk</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">cycles</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">sizeHeader</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">sizeFooter</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1301,7 +1363,10 @@ setState('type_Block_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Chunk</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1332,37 +1397,53 @@ setState('type_Block_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Chunk_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;sizeWord&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;sizeWord&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/sizeWord&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Size of word in bytes.'); viewDocumentation('Element', 'sizeWord', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;lump&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;lump&gt; <span class="type">
                      <a title="Jump to &#34;Lump&#34; type definition." href="#type_Lump">Lump</a>
                   </span> &lt;/lump&gt; <span class="occurs">[1..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;countWords&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;countWords&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/countWords&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Count of words in a chunk'); viewDocumentation('Element', 'countWords', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;endian&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;endian&gt; <span class="type">
                      <a title="Jump to &#34;Endian&#34; type definition." href="#type_Endian">Endian</a>
                   </span> &lt;/endian&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Endian ordering of the words stored in the chunk.'); viewDocumentation('Element', 'endian', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;padding&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;padding&gt; <span class="type">
                      <a title="Jump to &#34;Padding&#34; type definition." href="#type_Padding">Padding</a>
                   </span> &lt;/padding&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Padding'); viewDocumentation('Element', 'padding', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;shift&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;shift&gt; <span class="type">
                      <a title="Jump to &#34;WordShift&#34; type definition." href="#type_WordShift">WordShift</a>
                   </span> &lt;/shift&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1379,40 +1460,46 @@ setState('type_Chunk_xibox', true);
          </div>
          <div id="type_Chunk_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Chunk</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">sizeWord</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Chunk</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">lump</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Lump&#34; type definition." href="#type_Lump">Lump</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">countWords</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">endian</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Endian&#34; type definition." href="#type_Endian">Endian</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">padding</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Padding&#34; type definition." href="#type_Padding">Padding</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">shift</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;WordShift&#34; type definition." href="#type_WordShift">WordShift</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">sizeWord</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">lump</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Lump&#34; type definition." href="#type_Lump">Lump</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">countWords</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">endian</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Endian&#34; type definition." href="#type_Endian">Endian</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">padding</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Padding&#34; type definition." href="#type_Padding">Padding</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">shift</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;WordShift&#34; type definition." href="#type_WordShift">WordShift</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1429,7 +1516,10 @@ setState('type_Chunk_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Cluster</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1460,24 +1550,40 @@ setState('type_Chunk_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Cluster_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;location&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;location&gt; <span class="type">
                      <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
                   </span> &lt;/location&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;rotation&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;rotation&gt; <span class="type">
                      <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
                   </span> &lt;/rotation&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;vendor&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;vendor&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/vendor&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;model&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;model&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/model&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;serial&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;serial&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/serial&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1494,33 +1600,39 @@ setState('type_Cluster_xibox', true);
          </div>
          <div id="type_Cluster_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Cluster</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">location</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Cluster</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">rotation</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">vendor</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">model</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">serial</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">location</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">rotation</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">vendor</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">model</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">serial</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1554,6 +1666,10 @@ setState('type_Cluster_scbox', false);
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
             <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td/>
          </tr>
       </table>
       <div class="sample box">
@@ -1626,6 +1742,10 @@ setState('type_Comment_scbox', false);
             </th>
             <td>no</td>
          </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A duration specifies a span of time in user specified units.  Defaults to seconds if units are note defined.</td>
+         </tr>
       </table>
       <div class="sample box">
          <div>
@@ -1679,7 +1799,10 @@ setState('type_Duration_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>File</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1699,7 +1822,7 @@ setState('type_Duration_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>A File is defined as the ordered collection of bytes retrieved from a single Lane over a finite interval of time and stored in a digital media device.
+            <td>A File is the ordered collection of bytes retrieved from a single Lane over a finite interval of time and stored in a digital media device.
 
 When a lane is written to a file, it may or may not be synchronized to the start of a block. For this reason there may be a byte offset from the beginning of the file to the first byte of the first block. This offset is different for each file.
 
@@ -1715,40 +1838,56 @@ The creation time of the file may be tagged as metadata. This time is typically 
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_File_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;url&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;url&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/url&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('url points to the file'); viewDocumentation('Element', 'url', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;timestamp&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;timestamp&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span> &lt;/timestamp&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;offset&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;offset&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/offset&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Byte offset into file for start of lane.'); viewDocumentation('Element', 'offset', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;owner&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;owner&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/owner&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;copyright&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;copyright&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/copyright&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;next&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;next&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/next&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Previous file URI in the sequence.'); viewDocumentation('Element', 'next', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;previous&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;previous&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/previous&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('Previous file URI in the sequence.'); viewDocumentation('Element', 'previous', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;lane&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;lane&gt; <span class="type">
                      <a title="Jump to &#34;Lane&#34; type definition." href="#type_Lane">Lane</a>
                   </span> &lt;/lane&gt; <span class="occurs">[1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1765,47 +1904,53 @@ setState('type_File_xibox', true);
          </div>
          <div id="type_File_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">File</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">url</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">File</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">timestamp</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">offset</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">owner</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">copyright</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">next</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">previous</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">lane</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Lane&#34; type definition." href="#type_Lane">Lane</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">url</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">timestamp</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">offset</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">owner</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">copyright</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">next</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">previous</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">lane</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Lane&#34; type definition." href="#type_Lane">Lane</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1822,7 +1967,10 @@ setState('type_File_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>FileSet</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1840,6 +1988,10 @@ setState('type_File_scbox', false);
             </th>
             <td>no</td>
          </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A file set is a list of metadata files URIs, which defines a group.</td>
+         </tr>
       </table>
       <div class="sample box">
          <div>
@@ -1849,8 +2001,18 @@ setState('type_File_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_FileSet_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;file&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;file&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/file&gt; <span class="occurs">[0..*]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('File element specifies the URI of the metadata file or id if locally contained within the current metadata scope.'); viewDocumentation('Element', 'file', docArray);">?</a>
@@ -1871,11 +2033,16 @@ setState('type_FileSet_xibox', true);
          </div>
          <div id="type_FileSet_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">FileSet</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">file</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">FileSet</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+                        </span>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">file</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1909,6 +2076,10 @@ setState('type_FileSet_scbox', false);
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
             <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A frequency specifies a frequency value in user specified units (defaults to Hz if not defined).</td>
          </tr>
       </table>
       <div class="sample box">
@@ -1963,7 +2134,10 @@ setState('type_Frequency_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Lane</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -1981,6 +2155,10 @@ setState('type_Frequency_scbox', false);
             </th>
             <td>no</td>
          </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A Lane is configuration specification defining the relationship between blocks, systems, and session information.</td>
+         </tr>
       </table>
       <div class="sample box">
          <div>
@@ -1990,23 +2168,39 @@ setState('type_Frequency_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Lane_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;bandsrc&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;bandsrc&gt; <span class="type">
                      <a title="Jump to &#34;BandSource&#34; type definition." href="#type_BandSource">BandSource</a>
                   </span> &lt;/bandsrc&gt; <span class="occurs">[1..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;session&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;session&gt; <span class="type">
                      <a title="Jump to &#34;Session&#34; type definition." href="#type_Session">Session</a>
                   </span> &lt;/session&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;system&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;system&gt; <span class="type">
                      <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
                   </span> &lt;/system&gt; <span class="occurs">[1..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;block&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;block&gt; <span class="type">
                      <a title="Jump to &#34;Block&#34; type definition." href="#type_Block">Block</a>
                   </span> &lt;/block&gt; <span class="occurs">[1..*]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2023,30 +2217,36 @@ setState('type_Lane_xibox', true);
          </div>
          <div id="type_Lane_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Lane</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">bandsrc</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Lane</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;BandSource&#34; type definition." href="#type_BandSource">BandSource</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">session</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Session&#34; type definition." href="#type_Session">Session</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">system</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">block</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Block&#34; type definition." href="#type_Block">Block</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">bandsrc</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;BandSource&#34; type definition." href="#type_BandSource">BandSource</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">session</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Session&#34; type definition." href="#type_Session">Session</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">system</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">block</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Block&#34; type definition." href="#type_Block">Block</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2063,7 +2263,10 @@ setState('type_Lane_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Lump</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -2094,11 +2297,27 @@ setState('type_Lane_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Lump_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;stream&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;stream&gt; <span class="type">
                      <a title="Jump to &#34;Stream&#34; type definition." href="#type_Stream">Stream</a>
                   </span> &lt;/stream&gt; <span class="occurs">[1..*]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2115,12 +2334,18 @@ setState('type_Lump_xibox', true);
          </div>
          <div id="type_Lump_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Lump</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">stream</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Lump</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;Stream&#34; type definition." href="#type_Stream">Stream</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">stream</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Stream&#34; type definition." href="#type_Stream">Stream</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2312,7 +2537,58 @@ setState('type_Metadata_scbox', false);
          </tr>
          <tr>
             <th>Sub-types:</th>
-            <td>None</td>
+            <td>
+               <ul>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Block&#34; type definition." href="#type_Block">Block</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Band&#34; type definition." href="#type_Band">Band</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Stream&#34; type definition." href="#type_Stream">Stream</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Chunk&#34; type definition." href="#type_Chunk">Chunk</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Lump&#34; type definition." href="#type_Lump">Lump</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Cluster&#34; type definition." href="#type_Cluster">Cluster</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Source&#34; type definition." href="#type_Source">Source</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Session&#34; type definition." href="#type_Session">Session</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Lane&#34; type definition." href="#type_Lane">Lane</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;File&#34; type definition." href="#type_File">File</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;FileSet&#34; type definition." href="#type_FileSet">FileSet</a>
+                     </span> (by extension)</li>
+               </ul>
+            </td>
          </tr>
       </table>
       <table class="properties">
@@ -2324,7 +2600,11 @@ setState('type_Metadata_scbox', false);
             <th>
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
-            <td>no</td>
+            <td>yes</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>MetadataElement is the base element with attributes and elements defined by all core metadata elements (implemented as extensions of this element).</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2362,7 +2642,7 @@ setState('type_MetadataElement_xibox', true);
          </div>
          <div id="type_MetadataElement_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">MetadataElement</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+               <span class="scTag">name</span>="<span class="scContent">MetadataElement</span>" <span class="scTag">abstract</span>="<span class="scContent">true</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
                      <span class="scTag">name</span>="<span class="scContent">artifact</span>" <span class="scTag">type</span>="<span class="scContent">
                         <span class="type">
                            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span>
@@ -2411,6 +2691,10 @@ setState('type_MetadataElement_scbox', false);
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
             <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A position specifies a point in 3-D Earth-Centered, Earth-Fixed space.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2485,7 +2769,14 @@ setState('type_Position_scbox', false);
          </tr>
          <tr>
             <th>Sub-types:</th>
-            <td>None</td>
+            <td>
+               <ul>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;Attitude&#34; type definition." href="#type_Attitude">Attitude</a>
+                     </span> (by extension)</li>
+               </ul>
+            </td>
          </tr>
       </table>
       <table class="properties">
@@ -2498,6 +2789,10 @@ setState('type_Position_scbox', false);
                <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
             </th>
             <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A rotation specifies a 3-D rotation matrix.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2542,7 +2837,10 @@ setState('type_Rotation_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Session</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -2560,6 +2858,10 @@ setState('type_Rotation_scbox', false);
             </th>
             <td>no</td>
          </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A Session specifies information about how,why,who,where information was collected.</td>
+         </tr>
       </table>
       <div class="sample box">
          <div>
@@ -2569,34 +2871,50 @@ setState('type_Rotation_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Session_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;toa&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;toa&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span> &lt;/toa&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;position&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;position&gt; <span class="type">
                      <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
                   </span> &lt;/position&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;attitude&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;attitude&gt; <span class="type">
                      <a title="Jump to &#34;Attitude&#34; type definition." href="#type_Attitude">Attitude</a>
                   </span> &lt;/attitude&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;poc&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;poc&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/poc&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;contact&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;contact&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/contact&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;system&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;system&gt; <span class="type">
                      <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
                   </span> &lt;/system&gt; <span class="occurs">[0..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;campaign&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;campaign&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/campaign&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;scenario&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;scenario&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/scenario&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2613,49 +2931,55 @@ setState('type_Session_xibox', true);
          </div>
          <div id="type_Session_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Session</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">toa</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Session</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">position</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">attitude</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Attitude&#34; type definition." href="#type_Attitude">Attitude</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">poc</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">contact</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">system</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">campaign</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">scenario</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">toa</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">position</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">attitude</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Attitude&#34; type definition." href="#type_Attitude">Attitude</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">poc</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">contact</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">system</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;System&#34; type definition." href="#type_System">System</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">campaign</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">scenario</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2672,7 +2996,10 @@ setState('type_Session_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Source</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -2692,7 +3019,7 @@ setState('type_Session_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>A source is defined as the originator of an electrical signal. A coordinate frame is associated with a cluster. The origin and rotation of this frame is specified with respect to the platform coordinate frame.A source is defined as the originator of an electrical signal. A coordinate frame is associated with a cluster. The origin and rotation of this frame is specified with respect to the platform coordinate frame.</td>
+            <td>A source is the originator of an electrical signal. A coordinate frame is associated with a cluster. The origin and rotation of this frame is specified with respect to the platform coordinate frame.A source is defined as the originator of an electrical signal. A coordinate frame is associated with a cluster. The origin and rotation of this frame is specified with respect to the platform coordinate frame.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2703,26 +3030,42 @@ setState('type_Session_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Source_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;type&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;type&gt; <span class="type">
                      <a title="Jump to &#34;SourceType&#34; type definition." href="#type_SourceType">SourceType</a>
                   </span> &lt;/type&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;polarization&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;polarization&gt; <span class="type">
                      <a title="Jump to &#34;Polarization&#34; type definition." href="#type_Polarization">Polarization</a>
                   </span> &lt;/polarization&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;origin&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;origin&gt; <span class="type">
                      <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
                   </span> &lt;/origin&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;rotation&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;rotation&gt; <span class="type">
                      <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
                   </span> &lt;/rotation&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;idcluster&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;idcluster&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/idcluster&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2739,35 +3082,41 @@ setState('type_Source_xibox', true);
          </div>
          <div id="type_Source_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Source</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">type</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Source</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;SourceType&#34; type definition." href="#type_SourceType">SourceType</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">polarization</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Polarization&#34; type definition." href="#type_Polarization">Polarization</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">origin</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">rotation</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">idcluster</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">type</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;SourceType&#34; type definition." href="#type_SourceType">SourceType</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">polarization</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Polarization&#34; type definition." href="#type_Polarization">Polarization</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">origin</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Position&#34; type definition." href="#type_Position">Position</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">rotation</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Rotation&#34; type definition." href="#type_Rotation">Rotation</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">idcluster</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2784,7 +3133,10 @@ setState('type_Source_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>Stream</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -2802,6 +3154,10 @@ setState('type_Source_scbox', false);
             </th>
             <td>no</td>
          </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>A stream defines sample data comprising information from one or more bands.</td>
+         </tr>
       </table>
       <div class="sample box">
          <div>
@@ -2811,35 +3167,51 @@ setState('type_Source_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_Stream_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;ratefactor&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;ratefactor&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/ratefactor&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('If the rate factor (N) is greater than one, there will be N samples of the stream included per base rate period.'); viewDocumentation('Element', 'ratefactor', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;quantization&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;quantization&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/quantization&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;packedbits&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;packedbits&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span> &lt;/packedbits&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation"
                      onclick="docArray = new Array('The total number of bits per sample.'); viewDocumentation('Element', 'packedbits', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;alignment&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;alignment&gt; <span class="type">
                      <a title="Jump to &#34;Alignment&#34; type definition." href="#type_Alignment">Alignment</a>
                   </span> &lt;/alignment&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;format&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;format&gt; <span class="type">
                      <a title="Jump to &#34;SampleFormat&#34; type definition." href="#type_SampleFormat">SampleFormat</a>
                   </span> &lt;/format&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;encoding&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;encoding&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/encoding&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;band&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;band&gt; <span class="type">
                      <a title="Jump to &#34;Band&#34; type definition." href="#type_Band">Band</a>
                   </span> &lt;/band&gt; <span class="occurs">[1..*]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2856,44 +3228,50 @@ setState('type_Stream_xibox', true);
          </div>
          <div id="type_Stream_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">Stream</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">ratefactor</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">Stream</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">quantization</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">packedbits</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">alignment</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Alignment&#34; type definition." href="#type_Alignment">Alignment</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">default</span>="<span class="scContent">Undefined</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">format</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;SampleFormat&#34; type definition." href="#type_SampleFormat">SampleFormat</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">encoding</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">band</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Band&#34; type definition." href="#type_Band">Band</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">ratefactor</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">quantization</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">packedbits</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:unsignedInt</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">alignment</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Alignment&#34; type definition." href="#type_Alignment">Alignment</a>
+                              </span>
+                           </span>" <span class="scTag">default</span>="<span class="scContent">Undefined</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">format</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;SampleFormat&#34; type definition." href="#type_SampleFormat">SampleFormat</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">encoding</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">band</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Band&#34; type definition." href="#type_Band">Band</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2910,7 +3288,10 @@ setState('type_Stream_scbox', false);
       <table class="hierarchy">
          <tr>
             <th>Super-types:</th>
-            <td>None</td>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
+               </span> &lt; <strong>System</strong> (by extension)</td>
          </tr>
          <tr>
             <th>Sub-types:</th>
@@ -2930,7 +3311,7 @@ setState('type_Stream_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>A System is defined as a complete data collection apparatus. The system comprises all antennas, sensors, and other information outputting equipment down to the disk arrays that store SDR files. The system may also include GNSS signal simulators. The standard includes geometrical parameters (location and attitude) to the extent that this information is necessary for post-processing SDR data stream. For example, initial position and platform orientation may be needed for a dynamic scenario. The relative position and orientation of antennas and their elements with respect to the platform coordinate frame are needed for adaptive antenna signal processing.</td>
+            <td>A System is a complete data collection apparatus. The system comprises all antennas, sensors, and other information outputting equipment down to the disk arrays that store SDR files. The system may also include GNSS signal simulators. The standard includes geometrical parameters (location and attitude) to the extent that this information is necessary for post-processing SDR data stream. For example, initial position and platform orientation may be needed for a dynamic scenario. The relative position and orientation of antennas and their elements with respect to the platform coordinate frame are needed for adaptive antenna signal processing.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2941,26 +3322,42 @@ setState('type_Stream_scbox', false);
             <span class="caption">XML Instance Representation</span>
          </div>
          <div id="type_System_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;freqBase&gt; <span class="type">
+            <div style="margin-left: 0em">&lt;...<br/>
+               <span style="margin-left: 0.5em" class="inherited"> id="<span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;artifact&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/artifact&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;comment&gt; <span class="type">
+                     <a title="Jump to &#34;Comment&#34; type definition." href="#type_Comment">Comment</a>
+                  </span> &lt;/comment&gt; <span class="occurs">[0..*]</span>
+               </div>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Sequence' in glossary" href="#term_Sequence">Sequence</a> 
+                  <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em" class="newFields">&lt;freqBase&gt; <span class="type">
                      <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
                   </span> &lt;/freqBase&gt; <span class="occurs">[1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;equipment&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;equipment&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/equipment&gt; <span class="occurs">[0..1]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;source&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;source&gt; <span class="type">
                      <a title="Jump to &#34;Source&#34; type definition." href="#type_Source">Source</a>
                   </span> &lt;/source&gt; <span class="occurs">[1..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;cluster&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;cluster&gt; <span class="type">
                      <a title="Jump to &#34;Cluster&#34; type definition." href="#type_Cluster">Cluster</a>
                   </span> &lt;/cluster&gt; <span class="occurs">[0..*]</span>
                </div>
-               <div style="margin-left: 1.5em">&lt;type&gt; <span class="type">
+               <div style="margin-left: 3em" class="newFields">&lt;type&gt; <span class="type">
                      <a title="Jump to &#34;SystemType&#34; type definition." href="#type_SystemType">SystemType</a>
                   </span> &lt;/type&gt; <span class="occurs">[0..1]</span>
-               </div>&lt;/...&gt;</div>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Sequence</span>
+               <br/>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
@@ -2977,35 +3374,41 @@ setState('type_System_xibox', true);
          </div>
          <div id="type_System_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">System</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">freqBase</span>" <span class="scTag">type</span>="<span class="scContent">
+               <span class="scTag">name</span>="<span class="scContent">System</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                           <a title="Jump to &#34;MetadataElement&#34; type definition." href="#type_MetadataElement">MetadataElement</a>
                         </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">equipment</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">source</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Source&#34; type definition." href="#type_Source">Source</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">cluster</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;Cluster&#34; type definition." href="#type_Cluster">Cluster</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">type</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;SystemType&#34; type definition." href="#type_SystemType">SystemType</a>
-                        </span>
-                     </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span> 
+                        <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">freqBase</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Frequency&#34; type definition." href="#type_Frequency">Frequency</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">equipment</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">source</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Source&#34; type definition." href="#type_Source">Source</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">cluster</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;Cluster&#34; type definition." href="#type_Cluster">Cluster</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">type</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;SystemType&#34; type definition." href="#type_SystemType">SystemType</a>
+                              </span>
+                           </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
          </div>
          <script type="text/javascript">
 <!--
