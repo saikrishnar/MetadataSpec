@@ -2,8 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="xs3p.xsl"?>
 
 <xs:schema elementFormDefault="qualified"
-           targetNamespace="http://www.ion.org/XMLSchema/GnssMetadata.xsd"
-           xmlns="http://www.ion.org/XMLSchema/GnssMetadata.xsd"
+           targetNamespace="http://www.ion.org/standards/sdrwg/schema/metadata.xsd"
+           xmlns="http://www.ion.org/standards/sdrwg/schema/metadata.xsd"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <!-- Top Level Element Definition -->
